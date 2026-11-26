@@ -1,6 +1,6 @@
 # NodFirst constitution
 
-> Version: 0.1.0 · Part of the NodFirst kit (`nodfirst/`). Replaced as a whole when the kit is updated: never edit it in a project.
+> Version: 0.1.1 · Part of the NodFirst kit (`nodfirst/`). Replaced as a whole when the kit is updated: never edit it in a project.
 > Language: framework files in English. Product and spec content may be in any language.
 
 The constitution holds the **core rules**: they are the same in every project and for every agent.

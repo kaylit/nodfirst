@@ -1,6 +1,6 @@
 # NodFirst manual
 
-**Version:** 0.1 · NodFirst, a Spec-Driven Development kit · works with any AI coding agent that can read and edit files in a folder.
+**Version:** 0.2 · NodFirst, a Spec-Driven Development kit · works with any AI coding agent that can read and edit files in a folder.
 
 This manual assumes **no technical knowledge**. Where a technical word is unavoidable it is explained the first time. Parts marked *(for developers)* can be skipped by everyone else.
 

@@ -10,7 +10,7 @@
   You decide and approve; the agent writes, checks, reports and stops.</p>
 
   <p>
-    <img alt="Version 0.1.0" src="https://img.shields.io/badge/version-0.1.0-1B4A7A">
+    <img alt="Version 0.2.0" src="https://img.shields.io/badge/version-0.2.0-1B4A7A">
     <img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-177A4F">
     <img alt="No install" src="https://img.shields.io/badge/install-copy%20a%20folder-0D2240">
   </p>
@@ -90,13 +90,13 @@ If you are a developer who wants the widest integration and a large community, S
 
 ## Status
 
-Version **0.1.0**, an early release. Its core was run on two projects before release (a web project and a sandbox library), and on a first real project after it, built and deployed from `init` to `verify` ([Shortz](examples/shortz/)). What has been used for real, and what has not (including changes not yet released):
+Version **0.2.0**, an early release. Its core was run on two projects before release (a web project and a sandbox library), and on a first real project after it, built and deployed from `init` to `verify` ([Shortz](examples/shortz/)). What has been used for real, and what has not:
 
 | Part | State |
 |---|---|
 | `init` (interview and profile), `specify` (new and revise), `plan`, `tasks`, `analyze`, `implement` | used on three projects |
 | Working profile Solo, Git checkpoints, command files for Cursor, `design`, `verify` | used on one project (Shortz) |
-| Working profiles Guided and Team, command files for other tools, `init update`, `adopt`, `next`, `fix`; closing a feature and the new `verify` verdict rules (unreleased) | new, not yet used |
+| Working profiles Guided and Team, command files for other tools, `init update`, `adopt`, `next`, `fix`; closing a feature and the new `verify` verdict rules (0.2) | new, not yet used |
 | `specify` from your material, `clarify`, `design-system` | written, not yet used |
 | Module `library` | proven (sandbox) · module `web`: partly proven, on two projects |
 | Module `backend` | used once (Shortz), line-by-line review still to do |

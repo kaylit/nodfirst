@@ -10,7 +10,7 @@ Status: `[ ]` to do · `[~]` in progress · `[x]` done.
 - [ ] All playbooks and modules marked "not yet proven" have been used once, or are removed.
 
 ## Next
-- [ ] **Turn the Shortz lessons into kit changes,** one at a time (`examples/shortz/README.md`, "What this run taught the kit"); record them in `maintainers/lessons-origin.md`.
+- [~] **Turn the Shortz lessons into kit changes,** one at a time (`examples/shortz/README.md`, "What this run taught the kit"); record them in `maintainers/lessons-origin.md`. *Lessons 1–4 in 0.2.0 (3 partly); 5 (narrow skeletons) and 6 (fix skipped) wait for a second project.*
 - [~] **First real project with NodFirst 0.1:** run `init` to `verify`; check the working profile, Git checkpoints and command files in at least two tools. *Done once (Shortz, Solo, Cursor; `examples/shortz/`); a second tool still to try.*
 - [ ] **Manual test with a non-technical reader:** record where they get stuck; fix the manual.
 - [ ] **Try `adopt`** on an existing code base.
@@ -27,6 +27,7 @@ Status: `[ ]` to do · `[~]` in progress · `[x]` done.
 - [ ] Manual in other languages (decision so far: English only).
 
 ## Done
+- [x] 0.2.0: lessons from Shortz (closing a feature, Needs-a-human checks and exact verdicts, re-run rule, lessons in every project), maturity states updated, real example.
 - [x] `examples/`: a small **real** feature (spec, plan, tasks, analysis, verification) with "why it is done this way" notes, taken from a real run: `examples/shortz/`.
 - [x] Flow proven on a web project (partly) and on a library (fully), before the first release.
 - [x] Modules `web`, `library`, `backend`, `mobile`, `desktop` written.

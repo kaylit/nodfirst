@@ -1,6 +1,6 @@
 # Lessons from the origin projects
 
-> Log of the lessons that shaped the rules: first the two proving grounds run before the first release, then real projects after it (newest at the end). "Applied in 0.1" means the rule is part of NodFirst 0.1.0; "applied in [Unreleased]" means it is on its way to the next version. File names follow the layout of that time (`sdd/` for today's `nodfirst/` and `project/`; "Level 2" for today's project profile).
+> Log of the lessons that shaped the rules: first the two proving grounds run before the first release, then real projects after it (newest at the end). "Applied in 0.1" means the rule is part of NodFirst 0.1.0; "applied in 0.2", that it is part of NodFirst 0.2.0. File names follow the layout of that time (`sdd/` for today's `nodfirst/` and `project/`; "Level 2" for today's project profile).
 
 Where an agent misunderstood, improvised, or skipped a gate; which template section was missing or useless; which rule was too vague.
 Review after each feature and amend templates, playbooks, or the constitution.
@@ -151,19 +151,19 @@ Format: **Date · Feature · What happened · Cause · Change made (file)**
 ## 2026-11-26 · Shortz, feature 001 (first real project on 0.1.0) · No way to close a feature with accepted findings
 - **What happened:** `verify` run 3 gave `not verified` with 14 findings. The human chose to ship and close the feature, accepting all of them. The kit had no such outcome: the agent invented a `Last closed` line in the profile and a "Closed" mark in the roadmap, and `next` would still have answered "run `verify`". See `examples/shortz/`.
 - **Cause:** `verify`, `next`, `implement` and the manual knew only two outcomes: `verified` (finished) or fix and verify again. Closing knowingly is a human decision the kit did not name.
-- **Change:** **applied in [Unreleased]**: `verify` has a "Closing the feature" step (the human names every Critical or High finding left, with a reason and a follow-up; the agent records a Closure section, profile Section 0 and the roadmap line; the verdict never changes); `next` and `implement` treat a recorded Closure as finished; manual 7.8 and Appendix B explain it.
+- **Change:** **applied in 0.2**: `verify` has a "Closing the feature" step (the human names every Critical or High finding left, with a reason and a follow-up; the agent records a Closure section, profile Section 0 and the roadmap line; the verdict never changes); `next` and `implement` treat a recorded Closure as finished; manual 7.8 and Appendix B explain it.
 
 ## 2026-11-26 · Shortz, feature 001 · Checks only a person can do blocked the verdict
 - **What happened:** "no GitHub Actions run observed" and "production smoke not repeated by this run" were written as High findings (F9, F10). With them, `verified` and even `partly verified` were out of reach whatever the code did, although the same report had a "Needs a human" list for such checks.
 - **Cause:** `verify` said both "a check that cannot run is a finding" and "`partly verified`: some checks could not run", and "untested" (High) did not say whether it meant the code or the environment.
-- **Change:** **applied in [Unreleased]**: a check that could not be done from here goes to Needs a human (checkbox, result recorded when the human reports it), never as a finding or a pass; "untested" means no test in the code; the three verdicts have exact rules; closing also needs every open human check done or accepted.
+- **Change:** **applied in 0.2**: a check that could not be done from here goes to Needs a human (checkbox, result recorded when the human reports it), never as a finding or a pass; "untested" means no test in the code; the three verdicts have exact rules; closing also needs every open human check done or accepted.
 
 ## 2026-11-26 · Shortz, feature 001 · The verdict changed between runs
 - **What happened:** run 2 said `partly verified` (10 findings); run 3, on almost the same code, said `not verified` (14 findings, 2 Critical), partly by reading the severity scale more literally.
 - **Cause:** no rule on how a re-run treats the previous findings, and an ambiguous verdict rule (above).
-- **Change:** **applied in [Unreleased]**: a re-run lists every previous finding as closed, still open or reclassified, with a reason for any change of severity, and must not reclassify only to change the verdict. Watch on the next real project whether this is enough.
+- **Change:** **applied in 0.2**: a re-run lists every previous finding as closed, still open or reclassified, with a reason for any change of severity, and must not reclassify only to change the verdict. Watch on the next real project whether this is enough.
 
 ## 2026-11-26 · Shortz, feature 001 · No lessons were recorded
 - **What happened:** a whole feature with three verification runs, a change request and a task revision left `project/lessons.md` empty. The lessons of this run were reconstructed afterwards by the maintainer, from the files and the commits.
 - **Cause:** the profile said "not a proving ground", and the lessons log was described only as part of a proving ground's feedback loop; the manual left writing entries to the human.
-- **Change:** **applied in [Unreleased]**: in every project the agent proposes a lessons entry when the human corrects it or a document (`AGENTS.md`), and up to three when a feature is closed (`verify`, "Closing the feature"); it writes only the entries the human accepts. The profile skeleton (Section 9) is unchanged.
+- **Change:** **applied in 0.2**: in every project the agent proposes a lessons entry when the human corrects it or a document (`AGENTS.md`), and up to three when a feature is closed (`verify`, "Closing the feature"); it writes only the entries the human accepts. The profile skeleton (Section 9) is unchanged.
