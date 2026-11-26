@@ -1,6 +1,6 @@
 # Playbook: Implement
 
-**Version:** 0.2 (tested on three features, forty-seven tasks)
+**Version:** 0.3 (tested on three features, forty-seven tasks)
 **Purpose:** carry out one task of an approved task list: tests first, minimal code, quality gates, honest report.
 **Prompt:** `/nodfirst-implement` (or mention `nodfirst/playbooks/implement.md`) (next task) or add `T5` (a named task).
 **Output:** the code and tests of the task, and `tasks.md` updated.
@@ -11,7 +11,7 @@
 ## Preconditions
 - Spec, plan and tasks are `Approved`. If an analysis exists, it has no Critical or High left (or the human accepted them).
 - The task's dependencies are done.
-- The tools and runtimes the task needs are installed. If one is missing, mark the task `[!]`, say what the human must do, and stop. **Never lower a version or relax a constraint to continue.**
+- The tools and runtimes the task needs are installed (components of a pinned dependency excepted: constitution, Section 4). If one is missing, mark the task `[!]`, say what the human must do, and stop. **Never lower a version or relax a constraint to continue.**
 
 ## Instructions for the agent
 

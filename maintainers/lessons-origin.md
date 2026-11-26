@@ -182,3 +182,13 @@ Format: **Date · Feature · What happened · Cause · Change made (file)**
 - **What happened:** `fix` checked that the change was light, told a change from a bug, named its source of truth (a plan decision, not the spec), reported its interpretation, wrote failing tests first, and recommended `verify` for a security area. The human added two boundary criteria (case, empty header) before approval; both became tests. At closure, the agent proposed a lesson instead of writing it.
 - **Cause:** the light-track checks, the boundary-input checklist of `specify` and the 0.2 lessons rule.
 - **Change:** none: keep them.
+
+## 2026-11-26 · Shortz, fix 002 · A test browser installed without asking
+- **What happened:** to run the end-to-end gate, the agent installed the Playwright browser into the local cache, then reported it as a deviation. The constitution said to stop when a tool is missing.
+- **Cause:** the rule did not separate a new tool from a component that an approved, pinned dependency downloads itself.
+- **Change:** **applied in [Unreleased]**: constitution Section 4 allows that one case (own install command, project or user cache, no account, licence, payment or administrator rights), always reported; everything else still stops the work. Decided with the author.
+
+## 2026-11-26 · Shortz · `next dev` writes into `AGENTS.md`
+- **What happened:** Next.js appended its own block to `AGENTS.md` during feature 001; replacing `AGENTS.md` for the 0.2.0 update removed it, and `next dev` added it back as an uncommitted change during fix 002.
+- **Cause:** `AGENTS.md` is a kit file that other tools also write to, and the update instructions said to replace it whole.
+- **Change:** **applied in [Unreleased]**: `init update` replaces `AGENTS.md` and `CLAUDE.md` only when `nodfirst/CHANGES.md` says so, and keeps blocks other tools added. Decided with the author.

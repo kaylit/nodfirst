@@ -1,6 +1,6 @@
 # NodFirst constitution
 
-> Version: 0.1.1 · Part of the NodFirst kit (`nodfirst/`). Replaced as a whole when the kit is updated: never edit it in a project.
+> Version: 0.2.0 · Part of the NodFirst kit (`nodfirst/`). Replaced as a whole when the kit is updated: never edit it in a project.
 > Language: framework files in English. Product and spec content may be in any language.
 
 The constitution holds the **core rules**: they are the same in every project and for every agent.
@@ -112,7 +112,7 @@ The agent that wrote the code does not certify it alone. Before a feature is cal
 
 - Read this constitution, `project/profile.md`, `AGENTS.md`, and the relevant `spec.md`, `plan.md` and `tasks.md` before changing anything.
 - Work on one task at a time. State which task and which requirement IDs you address.
-- Report deviations, blockers and discovered gaps instead of working around them. When something the task needs is missing (a runtime, a tool, a permission), stop and say so; never lower a constraint to continue.
+- Report deviations, blockers and discovered gaps instead of working around them. When something the task needs is missing (a runtime, a tool, a permission), stop and say so; never lower a constraint to continue. One exception: a component that a dependency already pinned in the plan installs with its own command (for example the browsers of an end-to-end test tool), into the project or the user's cache, with no account, licence, payment or administrator rights, may be installed; say so in the report.
 - Do not edit approved specs or plans to fit the code. Write a change request.
 - Never read, print or commit secrets. Never run destructive commands without explicit human approval.
 - Do not modify files outside the scope of the current task.

@@ -63,6 +63,7 @@ Use when the human has replaced the `nodfirst/` folder with a newer version.
 1. Compare `nodfirst/VERSION` with the version in the profile header. Read `nodfirst/CHANGES.md` for every version between the two, and list what it says to replace (for example `AGENTS.md`): if a listed file still differs from the new kit, tell the human. Ask what changed only if `CHANGES.md` is missing.
 2. Compare the profile with the skeleton description in this playbook (step 7): list new sections or fields the new version expects. Propose the additions; never remove or rewrite the human's content.
 3. Re-copy the command files for the human's tool (`nodfirst/adapters/README.md`), replacing only files whose name starts with `nodfirst-`.
+   **Kit files outside `nodfirst/`** (`AGENTS.md`, `CLAUDE.md`) are replaced only when `CHANGES.md` says so. Before replacing one, keep every block another tool added to it (for example between `<!-- BEGIN:… -->` and `<!-- END:… -->` lines) and put it back at the end; list what you kept.
 4. List any playbook or rule that changed in a way that affects work in progress (a feature between phases). Do not change existing specs, plans or tasks.
 5. Stop for approval; then update the kit version in the profile header.
 

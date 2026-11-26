@@ -2,6 +2,12 @@
 
 Read by `/nodfirst-init update` after the human replaces `nodfirst/`. Newest first. For each version: the files to replace, profile changes, and what affects a feature in progress. The full history is `CHANGELOG.md` in the NodFirst repository.
 
+## Next version (not yet released)
+- **Replace:** `nodfirst/`.
+- **Profile:** no change.
+- **Tools:** a component that a dependency already pinned in the plan installs with its own command (for example the browsers of an end-to-end test tool) may be installed by the agent, which says so in the report. Anything else missing still stops the work.
+- **`init update`:** replaces `AGENTS.md` and `CLAUDE.md` only when this file says so, and keeps blocks other tools added to them.
+
 ## 0.2.1
 - **Replace:** `nodfirst/`.
 - **Profile:** no change.
