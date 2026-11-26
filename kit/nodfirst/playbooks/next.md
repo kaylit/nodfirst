@@ -1,6 +1,6 @@
 # Playbook: Next (where are we, what now?)
 
-**Version:** 0.2 (not yet proven)
+**Version:** 0.3 (not yet proven)
 **Purpose:** read the project files and tell the human, in a few lines, where the project stands and what to do next. Safe to run at any time.
 **Prompt:** `/nodfirst-next` (or mention `nodfirst/playbooks/next.md`), or simply ask "where are we?".
 **Output:** a short answer in the chat. **No file changes.**
@@ -15,7 +15,7 @@ Follow the working profile's language (constitution, Section 2). Read only; chan
 1. **Set-up.** If `project/profile.md` is still the empty skeleton: the next step is `/nodfirst-init` (new project) or `/nodfirst-adopt` (existing code); say which one fits. If it is filled in but not `Approved`: the human reviews and approves the profile. In both cases, answer (step 5) and stop.
 2. **Find the active feature** (profile, Section 0). If none is set, list the features in `specs/` with their state, and the first idea in `project/roadmap.md`.
 3. **Work out the state of the active feature** from the files, in this order, and stop at the first gap:
-   - **light track** (`Track: Light` in the spec): spec `Draft` → review and approval; approved but not implemented → `/nodfirst-fix` in a new chat to implement it; implemented → finished (or `verify`, if the fix touched security). Skip the rest of this list.
+   - **light track** (`Track: Light` in the spec): spec `Draft` → review and approval; approved but not implemented → `/nodfirst-fix` in a new chat to implement it; implemented but the report not yet accepted → the human reviews it; accepted and security-relevant, no verification → `/nodfirst-verify` in a new chat; verification without **Closure** → the human closes it (`/nodfirst-verify close`); otherwise → finished. Skip the rest of this list.
    - no spec → `specify`;
    - spec `Draft` with open questions → answer them or `clarify`;
    - spec `Draft` or `Clarified` without open questions → the human reviews and approves the spec;

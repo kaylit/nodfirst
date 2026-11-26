@@ -167,3 +167,18 @@ Format: **Date · Feature · What happened · Cause · Change made (file)**
 - **What happened:** a whole feature with three verification runs, a change request and a task revision left `project/lessons.md` empty. The lessons of this run were reconstructed afterwards by the maintainer, from the files and the commits.
 - **Cause:** the profile said "not a proving ground", and the lessons log was described only as part of a proving ground's feedback loop; the manual left writing entries to the human.
 - **Change:** **applied in 0.2**: in every project the agent proposes a lessons entry when the human corrects it or a document (`AGENTS.md`), and up to three when a feature is closed (`verify`, "Closing the feature"); it writes only the entries the human accepts. The profile skeleton (Section 9) is unchanged.
+
+## 2026-11-26 · Shortz, update to 0.2.0 · `init update` had to ask for the release notes
+- **What happened:** after the human replaced `nodfirst/`, `/nodfirst-init update` asked for NodFirst's release notes; they live in the NodFirst repository, not in the project, so the human had to paste them.
+- **Cause:** nothing that ships with the kit says what changed between versions.
+- **Change:** **applied in 0.2.1**: `nodfirst/CHANGES.md` ships with the kit (files to replace, profile changes, effect on work in progress, per version); `init update` reads it; the release steps in `maintainers/README.md` include it.
+
+## 2026-11-26 · Shortz, fix 002 (first light fix) · How a light fix finishes was not written
+- **What happened:** a security-relevant fix (verification finding F14 of feature 001). After the implementation report the agent set `Active feature: none` and a `Last closed` line on its own; the recommended `verify` then had to guess which feature to check, and the closing step asked for a roadmap line that light fixes do not have. The agent of the closing step proposed this lesson itself.
+- **Cause:** `fix` ended with "commit when the human accepts"; `next` said an implemented light fix is finished; `verify` 0.2 said a feature is finished only when the human closes it, and its preconditions assumed `tasks.md`.
+- **Change:** **applied in 0.2.1**: `fix` says when a fix is finished (accepted report; or, if security-relevant, closed after `verify`, staying the active feature until then) and that light fixes have no roadmap line; `verify` has a light-fix precondition (light spec, the specs it changes, the commits of the fix) and records profile and roadmap only where they name the feature; `next` follows the same states; manual Part 8 explains it.
+
+## 2026-11-26 · Shortz, fix 002 · What worked (keep)
+- **What happened:** `fix` checked that the change was light, told a change from a bug, named its source of truth (a plan decision, not the spec), reported its interpretation, wrote failing tests first, and recommended `verify` for a security area. The human added two boundary criteria (case, empty header) before approval; both became tests. At closure, the agent proposed a lesson instead of writing it.
+- **Cause:** the light-track checks, the boundary-input checklist of `specify` and the 0.2 lessons rule.
+- **Change:** none: keep them.

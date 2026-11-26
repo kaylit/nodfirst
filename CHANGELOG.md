@@ -7,6 +7,18 @@ Categories: **Added**, **Changed**, **Fixed**, **Removed**. Each entry names the
 ## [Unreleased]
 <!-- Add entries here as you work; move them under a version when you tag it. -->
 
+## [0.2.1] — 2026-11-26 — light track, end to end
+
+**Updating from 0.2.0:** replace `nodfirst/`; then `/nodfirst-init update` (it now reads `nodfirst/CHANGES.md`). No profile change.
+
+### The kit (`kit/`)
+- **Added** `nodfirst/CHANGES.md`: what each version asks a project to replace, profile changes and the effect on work in progress; read by `init update` (`nodfirst/playbooks/init.md`, 0.2) instead of asking for release notes.
+- **Changed** how a light fix finishes: accepted report; or, if security-relevant, `verify` in a new chat and then `/nodfirst-verify close`, the fix staying the active feature until then; no roadmap line for light fixes. Files: `nodfirst/playbooks/fix.md` (0.2), `nodfirst/playbooks/next.md` (0.3), `nodfirst/manual.md` (Part 8, Appendix E).
+- **Changed** `verify` on a light fix: no `tasks.md`; checks the light spec, the specs and plan decisions it changes, and the commits of the fix; at closure, profile and roadmap are updated only where they name the feature. File: `nodfirst/playbooks/verify.md` (0.3).
+
+### The repository
+- **Changed** `README.md` (status), `maintainers/README.md` (release steps include `CHANGES.md`), `maintainers/lessons-origin.md` (three Shortz entries).
+
 ## [0.2.0] — 2026-11-26 — lessons from the first real project
 
 **Updating from 0.1.0:** replace `nodfirst/` and `AGENTS.md`; keep `project/`, `specs/`, `docs/`; run `/nodfirst-init update` (it refreshes the commands of your tool). The profile skeleton did not change. A feature in progress continues as it is; when it reaches `verify`, the new verdict rules and the closing step apply.

@@ -1,12 +1,12 @@
 # Playbook: Init (new project)
 
-**Version:** 0.1 (interview and profile tested on three projects; Solo profile, Git checkpoints and command install for Cursor used on one; Guided and Team profiles, other tools and "after a kit update" not yet proven)
+**Version:** 0.2 ("after a kit update" used once; interview and profile tested on three projects; Solo profile, Git checkpoints and command install for Cursor used on one; Guided and Team profiles, other tools not yet proven)
 **Purpose:** set up NodFirst in a project: write the project profile, choose how the human wants to work, install the commands for the human's coding tool, and create the supporting files. For a project that already has code, use `adopt` instead.
 **Prompt:** `/nodfirst-init` (or mention `nodfirst/playbooks/init.md`) followed by a few lines about the project. After a kit update: `/nodfirst-init update`.
 **Output:** `project/profile.md` filled in, `project/roadmap.md`, `project/lessons.md`, folders `specs/` and `docs/decisions/`, and the command files for the human's tool.
 
 ## Context to read (do not ask the human to attach it)
-`AGENTS.md`, `nodfirst/constitution.md`, `nodfirst/VERSION`, `project/profile.md`, `nodfirst/modules/README.md` and the modules it lists, `nodfirst/adapters/README.md`, and the list of files in the repository.
+`AGENTS.md`, `nodfirst/constitution.md`, `nodfirst/VERSION`, `nodfirst/CHANGES.md` (for an update), `project/profile.md`, `nodfirst/modules/README.md` and the modules it lists, `nodfirst/adapters/README.md`, and the list of files in the repository.
 
 ## What this playbook does not do
 - It does not change the constitution. If a rule does not fit, record an **exception** in the profile (Section 10) with the reason and ask for explicit approval.
@@ -60,7 +60,7 @@ Follow `nodfirst/constitution.md`, especially C2, C3 and C13. Until the working 
 
 ## After a kit update (`/nodfirst-init update`)
 Use when the human has replaced the `nodfirst/` folder with a newer version.
-1. Compare `nodfirst/VERSION` with the version in the profile header. Read the release notes (`CHANGELOG.md` in the NodFirst repository, not in this folder) if the human has them, or ask what changed.
+1. Compare `nodfirst/VERSION` with the version in the profile header. Read `nodfirst/CHANGES.md` for every version between the two, and list what it says to replace (for example `AGENTS.md`): if a listed file still differs from the new kit, tell the human. Ask what changed only if `CHANGES.md` is missing.
 2. Compare the profile with the skeleton description in this playbook (step 7): list new sections or fields the new version expects. Propose the additions; never remove or rewrite the human's content.
 3. Re-copy the command files for the human's tool (`nodfirst/adapters/README.md`), replacing only files whose name starts with `nodfirst-`.
 4. List any playbook or rule that changed in a way that affects work in progress (a feature between phases). Do not change existing specs, plans or tasks.

@@ -1,6 +1,6 @@
 # Playbook: Fix (light track)
 
-**Version:** 0.1 (not yet proven)
+**Version:** 0.2 (used on one project, one security-relevant fix)
 **Purpose:** a bug fix, or a small change to one behaviour, without the full cycle (constitution, Section 1, light track).
 **Prompt:** `/nodfirst-fix` (or mention `nodfirst/playbooks/fix.md`) and, below it, what is wrong or what should change, in your own words.
 **Output:** `specs/NNN-short-name/spec.md` with `Track: Light`, a test, the change, and the records updated.
@@ -24,8 +24,11 @@ Follow `nodfirst/constitution.md`, especially C1, C2, C5 and C11.
    - **Test first:** write the test that reproduces the bug or describes the change; run it and show it fails for the right reason (C5).
    - Make the smallest change that passes; run the single quality command (profile, Section 5).
    - Report as `implement` does (Task, Before, Tests added, Implementation, Gates, Deviations and interpretations).
-6. **Short verification:** re-read the criteria of the light spec against the code and the test, and list any other behaviour the change could affect, with the tests that cover it. For a security-relevant area, recommend `/nodfirst-verify` in a new chat.
-7. **Stop.** With git checkpoints, commit when the human accepts (`fix NNN done`).
+6. **Short verification:** re-read the criteria of the light spec against the code and the test, and list any other behaviour the change could affect, with the tests that cover it. Say whether the fix is **security-relevant** (it touches input validation, access checks, secrets, request metadata, logging of personal data, or an accepted security finding).
+7. **Stop.** When the human accepts the report:
+   - **Not security-relevant:** the fix is finished. Set `Active feature: none` (profile, Section 0) and, with git checkpoints, commit (`fix NNN done`).
+   - **Security-relevant:** with git checkpoints, commit (`fix NNN done`), keep the fix as the active feature, and recommend `/nodfirst-verify` in a new chat. The fix is finished when the human closes it (`/nodfirst-verify close`).
+   Light fixes have no line in `project/roadmap.md`; do not add one.
 
 ## Do not
 - Use the light track to avoid an approval, a test, or a spec update.

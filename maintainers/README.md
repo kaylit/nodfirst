@@ -6,7 +6,7 @@ Files here are about **evolving NodFirst**. They are not copied into user projec
 - Work on short branches merged into `main`. Versions `0.x`, tagged `v0.1.0`, `v0.2.0`, …
 - Small changes: edit the file, add a line under `[Unreleased]` in `CHANGELOG.md` naming the files (paths inside `kit/`).
 - A lesson from a project (something an agent got wrong, a rule that was vague) becomes: (1) a line in that project's `project/lessons.md`; (2) if general, a change to a playbook, template, module or the constitution here; (3) a line in `CHANGELOG.md`; (4) the playbook's `Version` bumped.
-- To release: move `[Unreleased]` entries under a new version with the date, update `kit/nodfirst/VERSION`, the version badge in `README.md` and the manual's version line, write `releases/vX.Y.Z.md`, then `git tag vX.Y.Z`.
+- To release: move `[Unreleased]` entries under a new version with the date, update `kit/nodfirst/VERSION`, `kit/nodfirst/CHANGES.md` (what a project must replace, profile changes, effect on work in progress), the version badge in `README.md` and the manual's version line, write `releases/vX.Y.Z.md`, then `git tag vX.Y.Z`.
 - Next steps live in `ROADMAP.md`.
 
 ## Rules for editing the kit

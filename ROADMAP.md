@@ -27,6 +27,7 @@ Status: `[ ]` to do · `[~]` in progress · `[x]` done.
 - [ ] Manual in other languages (decision so far: English only).
 
 ## Done
+- [x] 0.2.1: light track end to end (how a fix finishes, `verify` on a light fix), `CHANGES.md` for `init update`; first real use of `fix`, `init update` and closing.
 - [x] 0.2.0: lessons from Shortz (closing a feature, Needs-a-human checks and exact verdicts, re-run rule, lessons in every project), maturity states updated, real example.
 - [x] `examples/`: a small **real** feature (spec, plan, tasks, analysis, verification) with "why it is done this way" notes, taken from a real run: `examples/shortz/`.
 - [x] Flow proven on a web project (partly) and on a library (fully), before the first release.

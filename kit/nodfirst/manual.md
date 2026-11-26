@@ -1,6 +1,6 @@
 # NodFirst manual
 
-**Version:** 0.2 · NodFirst, a Spec-Driven Development kit · works with any AI coding agent that can read and edit files in a folder.
+**Version:** 0.2.1 · NodFirst, a Spec-Driven Development kit · works with any AI coding agent that can read and edit files in a folder.
 
 This manual assumes **no technical knowledge**. Where a technical word is unavoidable it is explained the first time. Parts marked *(for developers)* can be skipped by everyone else.
 
@@ -295,7 +295,7 @@ For a bug, or a small change to **one behaviour** that touches no stored data st
 ```
 /nodfirst-fix When a list is empty, the "Share" button still appears. It should be hidden.
 ```
-The agent first checks that it is really small (otherwise it recommends the full cycle). It writes a short spec (goal, criteria, the test), waits for your approval, writes a failing test, fixes, runs the checks and reports. If in doubt, use the full cycle.
+The agent first checks that it is really small (otherwise it recommends the full cycle). It writes a short spec (goal, criteria, the test), waits for your approval, writes a failing test, fixes, runs the checks and reports. When you accept the report, the fix is done. If it touched security (input checks, access, secrets, personal data), the agent asks you to run `/nodfirst-verify` in a new chat first, and you close it with `/nodfirst-verify close`. If in doubt, use the full cycle.
 
 ---
 
@@ -523,8 +523,9 @@ docs/decisions/          decision records
 |---|---|
 | `init` interview and profile, `specify` (Modes A and B), `plan`, `tasks`, `analyze`, `implement` | proven on two projects before the first release, used on a third after it |
 | Working profile Solo, Git checkpoints, command files for Cursor, `design`, `verify` | used on one real project |
-| Working profiles Guided and Team, command files for other tools, `init update` | new in 0.1, not yet used |
-| `adopt`, `next`, `fix`; closing a feature after `verify` | new, not yet used |
+| Working profiles Guided and Team, command files for other tools | new in 0.1, not yet used |
+| `fix`, `init update`, closing a feature after `verify` | used once |
+| `adopt`, `next` | new, not yet used |
 | `specify` Mode C, `clarify`, `design-system` | written, not yet used |
 | Module `library` | proven (on a sandbox project) |
 | Module `web` | partly proven, on two projects |

@@ -1,15 +1,16 @@
 # Playbook: Verify
 
-**Version:** 0.2 (used on one project, three runs; closing step, Needs-a-human checks and re-run rule new in 0.2, not yet proven)
+**Version:** 0.3 (used on one project: three runs on a full feature, one on a light fix; closing used twice; re-run rule not yet proven)
 **Purpose:** an independent check that the finished code does what the approved spec says, nothing more and nothing less, and respects the plan and the constitution (C14). It complements `analyze`, which checks the documents before the code exists.
 **Prompt:** `/nodfirst-verify` (or mention `nodfirst/playbooks/verify.md`), **in a new chat**, ideally with another model or another agent than the one that implemented the feature. To close the feature afterwards: `/nodfirst-verify close` followed by the findings you accept, each with a reason (any chat).
 **Output:** `specs/NNN-feature-name/verification.md` (the only file you may create or overwrite). Nothing else changes, except the lines named in "Closing the feature" when the human closes it.
 
 ## Context to read (do not ask the human to attach it)
-`AGENTS.md`, `nodfirst/constitution.md`, `project/profile.md`, the modules it lists (`nodfirst/modules/`), and for the active feature `spec.md`, `design.md` if any, `plan.md`, `tasks.md`, `analysis.md`; then the code and tests the tasks name, and the rest of the code base as needed.
+`AGENTS.md`, `nodfirst/constitution.md`, `project/profile.md`, the modules it lists (`nodfirst/modules/`), and for the active feature `spec.md`, `design.md` if any, `plan.md`, `tasks.md`, `analysis.md` (a light fix has only `spec.md`: read the specs it changes instead); then the code and tests the tasks name, and the rest of the code base as needed.
 
 ## Preconditions
-- All tasks of the feature are `[x]`. If not, say which are open and ask whether to verify what exists (a partial verification says so in its header).
+- **Light fix** (`Track: Light` in the spec): there is no `tasks.md`. The change is the commit or commits of the fix (`fix NNN done`); verify against the light spec, the specs and plan decisions it changes, and that diff. This is not a partial verification.
+- **Full track:** all tasks of the feature are `[x]`. If not, say which are open and ask whether to verify what exists (a partial verification says so in its header).
 - **Independence:** if this chat also wrote code for the feature, say so and recommend a new chat; continue only if the human insists, and write it in the header.
 
 ## Instructions for the agent
@@ -48,8 +49,8 @@ After the verification, the human decides; you never do (C2). Either **fix** (th
 1. **Every Critical or High finding left, and every open item under Needs a human, is named by the human as accepted** (or, for a Needs-a-human item, reported as done), each with a reason and a follow-up (a roadmap item, a later feature, or "none"). Ask for whatever is missing. Anything the human does not name stays open, and the feature is not closed. Before recording an accepted Critical or security finding, say in one sentence what it means for the people who use the product (Guided profile: in everyday words).
 2. **Record the decision,** changing nothing else:
    - `verification.md`: a final section **Closure** with closed by, date (as the human gives them), the verdict at closure (unchanged), and a table finding or check → reason → follow-up (for a feature with nothing left: "Nothing left open");
-   - `project/profile.md`, Section 0: `Active feature: none`;
-   - `project/roadmap.md`: at the end of the feature's line, `– closed <date> (verified)` or `– closed <date> (findings accepted: F…)`; each follow-up the human wants on the roadmap, as a new feature line.
+   - `project/profile.md`, Section 0: `Active feature: none`, if it names this feature;
+   - `project/roadmap.md`, if the feature has a line there (light fixes do not): at the end of the feature's line, `– closed <date> (verified)` or `– closed <date> (findings accepted: F…)`; each follow-up the human wants on the roadmap, as a new feature line.
 3. **Lessons.** Propose up to three entries for `project/lessons.md` from this feature: findings the human accepted, corrections the human made along the way, rules that were vague. Write only those the human accepts.
 4. **Git checkpoints:** commit those files with the message `feature NNN closed`.
 
