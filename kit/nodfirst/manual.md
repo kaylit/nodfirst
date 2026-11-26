@@ -380,7 +380,7 @@ IDs never change: a removed requirement stays listed as *Withdrawn*, new ones ge
 
 # Part 13 — Keeping the kit healthy
 
-- **Lessons:** whenever you correct the agent for a reason that could happen again, add a line in `project/lessons.md` (date, what happened, cause, rule added). If it is general, it can improve NodFirst itself: open an issue or a pull request in the NodFirst repository with the lesson.
+- **Lessons:** whenever you correct the agent for a reason that could happen again, it proposes a line for `project/lessons.md` (date, what happened, cause, rule added); when you close a feature, it proposes up to three. You say which to keep. If a lesson is general, it can improve NodFirst itself: open an issue or a pull request in the NodFirst repository with the lesson.
 - **Updating NodFirst:** replace the `nodfirst/` folder with the new one (and `AGENTS.md`, `CLAUDE.md` if the release notes say they changed). Do not touch `project/`, `specs/` or `docs/`. Then type `/nodfirst-init update`: the agent checks what changed, proposes additions to your profile (never removals) and refreshes the commands of your tool.
 - **Exceptions:** if a rule of the constitution does not fit your project, the agent records an exception in `project/profile.md` with the reason, and you approve it. The constitution itself is never edited in a project.
 

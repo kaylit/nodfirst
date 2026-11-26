@@ -15,6 +15,7 @@ This project uses **NodFirst**, a Spec-Driven Development kit: specs come before
 - **Reports (C13):** summary first (at most five lines), then interpretations, open questions, and what was not done or not run. Never claim a check that did not run.
 - **Plain language:** unless the profile says Solo or Team, assume the human is not technical (constitution, Section 4).
 - **Git** follows `project/profile.md`.
+- **Lessons:** when the human corrects you or a document for a reason that could happen again, propose a one-line entry for `project/lessons.md` (format in that file). Write it only if the human agrees.
 
 ## Playbooks
 The human names a playbook (by its command, for example `/nodfirst-specify`, or as `nodfirst/playbooks/specify.md`) and adds a few words. Read everything else from the files listed in the playbook's "Context to read".

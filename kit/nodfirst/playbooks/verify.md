@@ -50,7 +50,8 @@ After the verification, the human decides; you never do (C2). Either **fix** (th
    - `verification.md`: a final section **Closure** with closed by, date (as the human gives them), the verdict at closure (unchanged), and a table finding or check → reason → follow-up (for a feature with nothing left: "Nothing left open");
    - `project/profile.md`, Section 0: `Active feature: none`;
    - `project/roadmap.md`: at the end of the feature's line, `– closed <date> (verified)` or `– closed <date> (findings accepted: F…)`; each follow-up the human wants on the roadmap, as a new feature line.
-3. **Git checkpoints:** commit those files with the message `feature NNN closed`.
+3. **Lessons.** Propose up to three entries for `project/lessons.md` from this feature: findings the human accepted, corrections the human made along the way, rules that were vague. Write only those the human accepts.
+4. **Git checkpoints:** commit those files with the message `feature NNN closed`.
 
 The verdict is never changed to make a closure possible: a feature closed with accepted findings stays `partly verified` or `not verified`, and says so.
 

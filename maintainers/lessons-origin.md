@@ -162,3 +162,8 @@ Format: **Date · Feature · What happened · Cause · Change made (file)**
 - **What happened:** run 2 said `partly verified` (10 findings); run 3, on almost the same code, said `not verified` (14 findings, 2 Critical), partly by reading the severity scale more literally.
 - **Cause:** no rule on how a re-run treats the previous findings, and an ambiguous verdict rule (above).
 - **Change:** **applied in [Unreleased]**: a re-run lists every previous finding as closed, still open or reclassified, with a reason for any change of severity, and must not reclassify only to change the verdict. Watch on the next real project whether this is enough.
+
+## 2026-11-26 · Shortz, feature 001 · No lessons were recorded
+- **What happened:** a whole feature with three verification runs, a change request and a task revision left `project/lessons.md` empty. The lessons of this run were reconstructed afterwards by the maintainer, from the files and the commits.
+- **Cause:** the profile said "not a proving ground", and the lessons log was described only as part of a proving ground's feedback loop; the manual left writing entries to the human.
+- **Change:** **applied in [Unreleased]**: in every project the agent proposes a lessons entry when the human corrects it or a document (`AGENTS.md`), and up to three when a feature is closed (`verify`, "Closing the feature"); it writes only the entries the human accepts. The profile skeleton (Section 9) is unchanged.
