@@ -10,6 +10,10 @@ Categories: **Added**, **Changed**, **Fixed**, **Removed**. Each entry names the
 ### The kit (`kit/`)
 - **Changed** constitution 0.2.0, Section 4: a component that a dependency already pinned in the plan installs with its own command (for example end-to-end test browsers), into the project or a user cache, with no account, licence, payment or administrator rights, may be installed and is reported; anything else missing still stops the work. Files: `nodfirst/constitution.md`, `nodfirst/playbooks/implement.md` (0.3). Lesson: Shortz fix 002.
 - **Changed** `init update` replaces `AGENTS.md` and `CLAUDE.md` only when `nodfirst/CHANGES.md` says so, and keeps blocks other tools added to them (for example `next dev`). Files: `nodfirst/playbooks/init.md`, `nodfirst/manual.md` (Part 13), `nodfirst/CHANGES.md`. Lesson: Shortz.
+- **Fixed** `nodfirst/manual.md`: the headings of 7.3 (Design) and 7.8 (Verify) and Part 11 still described them as never used.
+
+### The repository
+- **Fixed** the documentation site: tables right after a heading (for example in every project profile and in the Shortz README) were shown as plain text with pipes, and consecutive `**Label:**` / `**Label.**` lines and blockquote lines were joined into one paragraph. GitHub renders them, the site's Markdown converter (kramdown) does not. `maintainers/tools/build_site.py` now adds the missing blank lines to the generated pages only; repository files are unchanged.
 
 ## [0.2.1] — 2026-11-26 — light track, end to end
 

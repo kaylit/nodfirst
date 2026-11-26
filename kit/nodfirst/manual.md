@@ -243,7 +243,7 @@ A spec for a small library needed four rounds of corrections in a real run. This
 **What happens.** The agent lists the doubts (vague words, contradictions, missing cases) with a priority, then asks **one question at a time** with options and a recommendation. You get the same spec, updated, and three lists: *Changes*, *Interpretations*, *Still open*. When no sentence can be read two ways, tell the agent "the spec is clarified" and it records the status. *Clarified* is not *approved*: approve the spec as usual before the plan.
 If you wrote the spec in your own format, clarify first asks you to run `specify` in Mode C.
 
-## 7.3 Design — what people see *(optional, only for features with screens, not yet proven)*
+## 7.3 Design — what people see *(optional, only for features with screens; used once)*
 **What you type.** `/nodfirst-design Screens: sign in, create account, "something went wrong". Material: design/signin.png (follow it exactly), Figma link for the other screens (colours and mood only).`
 **What you get.** `specs/001-name/design.md`: the **sources** you gave and what the agent *read* from each image; flows; screens; the table of **states** (empty, loading, error, offline…); every text the user will read; accessibility notes; **conflicts and gaps** (for example: the picture shows no error screen, so the agent *proposed* one, marked "proposed").
 **Check.** Does each screen match your material? Is the agent's reading of your images correct? Is every text right? Does any screen show something the spec does not describe? The spec wins on behaviour.
@@ -278,7 +278,7 @@ If you wrote the spec in your own format, clarify first asks you to run `specify
 
 **When the agent stops.** If a task cannot be done because the spec or plan is wrong, or a program is missing, the agent **stops and writes a change request**. That is good behaviour. You decide: revise the spec or plan, approve again, continue.
 
-## 7.8 Verify — the independent check *(not yet proven)*
+## 7.8 Verify — the independent check *(used on one project)*
 **What you type,** in a **new chat**, ideally with a different model or tool: `/nodfirst-verify`
 **Why.** The agent that wrote the code should not be the only one to say it is right. Verify reads only the files and the code, runs the checks itself, and answers for each requirement: *met*, *partial*, *missing*, *contradicts* or *untested*. It also looks for things **nobody asked for**, does a security and privacy review, and lists the checks only a person can do (for example "open the app on your phone and try to sign in with a wrong password").
 **What you get.** `verification.md` with a verdict:
@@ -347,7 +347,7 @@ IDs never change: a removed requirement stays listed as *Withdrawn*, new ones ge
 # Part 11 — Modules and kinds of project
 
 - The modules chosen at `init` are listed in `project/profile.md`, Section 1. The agent reads them in every phase.
-- `library` is **proven**, `web` **partly proven**; `backend`, `mobile` and `desktop` are **not yet proven** (careful checklists from standard practice). You can use them: the agent warns you and asks for confirmation.
+- `library` is **proven** (on a sandbox project), `web` **partly proven** (on two projects); `backend` has been used once but is still **not yet proven**, and `mobile` and `desktop` are **not yet proven** (careful checklists from standard practice). You can use them: the agent warns you and asks for confirmation.
 - **Real devices and machines:** for mobile and desktop, some checks can only be done on a real phone or computer. The agent asks you to run the app and report what you see.
 - **Accounts and consoles** (app stores, cloud services, certificates) are always done by you. The task list marks them "Requires human action".
 - If your kind of project has no module (for example features built on AI models), the agent uses the core rules and tells you what it could not check.

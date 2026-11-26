@@ -73,12 +73,51 @@ def front_matter(**kw):
     return "\n".join(lines)
 
 
+TABLE_ROW = re.compile(r"^\s*\|.*\|\s*$")
+TABLE_SEP = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)*\|?\s*$")
+LABEL_LINE = re.compile(r"^\*\*[^*\n]+[.:]\*\*(\s|$)")
+
+
+def space_blocks(text):
+    """Add the blank lines kramdown (GitHub Pages) needs and GitHub does not.
+
+    Only whitespace changes; the repository files stay as they are. Outside code fences:
+    a blank line before a table that follows a heading or a paragraph line; between
+    consecutive "**Label:** ..." or "**Label.** ..." lines and consecutive blockquote lines, so each stays its
+    own line instead of being joined into one paragraph.
+    """
+    lines = text.split("\n")
+    out, fence = [], None
+    for i, line in enumerate(lines):
+        stripped = line.lstrip()
+        marker = stripped[:3]
+        if marker in ("```", "~~~"):
+            ticks = len(stripped) - len(stripped.lstrip(marker[0]))
+            if fence is None:
+                fence = (marker[0], ticks)
+            elif marker[0] == fence[0] and ticks >= fence[1] and not stripped.strip(marker[0]).strip():
+                fence = None
+            out.append(line)
+            continue
+        prev = out[-1] if out else ""
+        if fence is None and prev.strip():
+            nxt = lines[i + 1] if i + 1 < len(lines) else ""
+            if TABLE_ROW.match(line) and TABLE_SEP.match(nxt) and not TABLE_ROW.match(prev):
+                out.append("")
+            elif LABEL_LINE.match(line) and LABEL_LINE.match(prev):
+                out.append("")
+            elif line.startswith(">") and prev.startswith(">") and line.strip() != ">" and prev.strip() != ">":
+                out.append(">")
+        out.append(line)
+    return "\n".join(out)
+
+
 def write_page(url, body, **fm):
     """url like '/manual/part-1/'. Writes OUT/<url>/index.md."""
     PAGES[url] = True
     path = OUT / url.strip("/") / "index.md" if url != "/" else OUT / "index.md"
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(front_matter(permalink=url, **fm) + "\n" + body.strip() + "\n", encoding="utf-8")
+    path.write_text(front_matter(permalink=url, **fm) + "\n" + space_blocks(body.strip()) + "\n", encoding="utf-8")
 
 
 def rewrite_links(text, source):
