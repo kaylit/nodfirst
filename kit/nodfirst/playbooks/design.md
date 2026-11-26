@@ -1,6 +1,6 @@
 # Playbook: Design
 
-**Version:** 0.1 (not yet proven)
+**Version:** 0.1 (used on one project, one feature; not yet with images or a design-tool file)
 **Purpose:** for a feature with a user interface, describe what users see and do: flows, screens, states, components, copy, and accessibility. The human may provide a written description, images, links to design tools (for example Figma), or any mix.
 **Prompt:** `/nodfirst-design` (or mention `nodfirst/playbooks/design.md`) and, below it, the screens to cover and any files or links. Extra instructions below.
 **Output:** `specs/NNN-feature-name/design.md`, status `Draft`. Reference images and exports go in `specs/NNN-feature-name/design/`.

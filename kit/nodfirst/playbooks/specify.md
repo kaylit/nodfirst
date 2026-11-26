@@ -1,6 +1,6 @@
 # Playbook: Specify
 
-**Version:** 0.1 (Modes A and B tested on two projects; Mode C not yet proven)
+**Version:** 0.1 (Modes A and B tested on two projects, Mode A on a third; Mode C not yet proven)
 **Purpose:** turn a feature idea into a draft `spec.md`, or revise an existing spec.
 **Prompt:** `/nodfirst-specify` (or mention `nodfirst/playbooks/specify.md`) and, below it, the idea (Mode A), the change requests (Mode B), or the text and files you wrote or collected (Mode C), in any language.
 **Output:** `specs/NNN-feature-name/spec.md`, status `Draft`.

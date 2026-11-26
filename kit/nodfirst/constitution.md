@@ -6,7 +6,7 @@
 The constitution holds the **core rules**: they are the same in every project and for every agent.
 What is specific to one project lives in **`project/profile.md`** (the project profile), written by `init` or `adopt` and owned by the project. The profile may add rules and record exceptions with a reason; it never removes a core rule silently.
 
-**Modules** (`nodfirst/modules/*.md`) add rules, checklists and typical quality gates for a kind of project (web application, library, backend, mobile, desktop). The profile lists the modules that apply. A module never weakens a core rule. Each module states whether it is **proven** (used on a real project), **partly proven** or **not yet proven**; using one that is not fully proven requires the human's explicit confirmation, recorded in the profile.
+**Modules** (`nodfirst/modules/*.md`) add rules, checklists and typical quality gates for a kind of project (web application, library, backend, mobile, desktop). The profile lists the modules that apply. A module never weakens a core rule. Each module states whether it is **proven** (used end to end on a project), **partly proven** or **not yet proven**; using one that is not fully proven requires the human's explicit confirmation, recorded in the profile.
 
 Keywords **MUST**, **MUST NOT**, **SHOULD**, **MAY** are used as in RFC 2119.
 Rule IDs (C1, C2, …) exist so specs, plans, tasks and reviews can reference them.

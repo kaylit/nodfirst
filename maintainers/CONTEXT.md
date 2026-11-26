@@ -28,7 +28,9 @@ Three working profiles: **Guided** (people who do not write code), **Solo** (a d
 Two proving grounds before the first release, run with an AI coding agent under the author's review:
 1. A web project (email and password accounts; spec, plan, tasks and first implementation tasks; paused after the third task). It produced the security and privacy rules, the handoff list in `plan`, the dependency and human-action rules in `tasks`, and the web module.
 2. A Python library parsing Italian deadline phrases (two features, 15 tasks, 160 tests, all gates green from a clean environment). It produced the boundary-input checklist, the revision mode and its three lists (Changes, Interpretations, Downstream impact), the severity rule of `analyze`, the final verification in `implement`, and the library module.
-Version 0.1.0 of NodFirst then added, without real use yet: the kit/project separation, working profiles, Git checkpoints, command files, `adopt`, `next`, `verify`, `fix`, C13 and C14. These came from a comparison with GitHub Spec Kit (its `converge` command, brownfield guide, agent integrations, and the common criticism of verbose Markdown).
+After the release, a first real project (Shortz, a URL shortener; Solo profile, Cursor, modules `web` and `backend`) ran one feature from `init` to `verify` and deployment: see `examples/shortz/` and the Shortz entries in `lessons-origin.md`.
+
+Version 0.1.0 of NodFirst had added, before that real use: the kit/project separation, working profiles, Git checkpoints, command files, `adopt`, `next`, `verify`, `fix`, C13 and C14. These came from a comparison with GitHub Spec Kit (its `converge` command, brownfield guide, agent integrations, and the common criticism of verbose Markdown).
 
 ## Known open items
 See `../ROADMAP.md`. In short: use NodFirst 0.1 on a real project from `init` to `verify`; test the manual with a non-technical reader; try `adopt`, `verify`, `clarify`, `design`, `design-system` and `specify` Mode C; review `backend`, `mobile`, `desktop` on their first real project.

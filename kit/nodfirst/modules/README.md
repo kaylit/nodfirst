@@ -6,15 +6,15 @@ Playbooks read the active modules listed in the profile (`Context to read`) and 
 
 | Module | File | State |
 |---|---|---|
-| Library or package | `library.md` | **Proven** on a sandbox project (two features, fifteen tasks) |
-| Web application | `web.md` | **Partly proven** on a real project; see "Not yet proven" in the file |
-| Backend service (HTTP API, jobs, events) | `backend.md` | **Not yet proven**, written from standard practice |
+| Library or package | `library.md` | **Proven** on a sandbox project built to test the kit (two features, fifteen tasks) |
+| Web application | `web.md` | **Partly proven** on two real projects; see "Not yet proven" in the file |
+| Backend service (HTTP API, jobs, events) | `backend.md` | **Not yet proven**: used once on a real project, line-by-line review still to do |
 | Mobile app (native or cross-platform) | `mobile.md` | **Not yet proven**, written from standard practice |
 | Desktop app | `desktop.md` | **Not yet proven**, written from standard practice |
 | LLM features (prompts, models, evaluation) | *not written* | Write the module when the first real project needs it. Start from the core and ask the human; do not copy another module |
 
 **Several modules at once** are normal: a web app with its own server activates `web` and `backend`; a mobile app with a server activates `mobile` and `backend`. When two modules disagree, the stricter rule wins; record the conflict in the profile, Section 10.
 
-**State values.** *Proven*: used on a real project end to end. *Partly proven*: some phases used; the unproven parts are listed in the module. *Not yet proven*: never used. `init` warns the human and asks for confirmation for the last two cases (for *partly proven*, it names the unproven parts).
+**State values.** *Proven*: used end to end on a project (a real product, or a sandbox built to test the kit; the module says which). *Partly proven*: some phases used; the unproven parts are listed in the module. *Not yet proven*: never used, or used without the line-by-line review its first project must do. `init` warns the human and asks for confirmation for the last two cases (for *partly proven*, it names the unproven parts).
 
 **An unproven module** is a starting checklist, not a verdict: the first project that uses it reviews every rule, records in `project/lessons.md` what was wrong or missing, and the module is updated afterwards.

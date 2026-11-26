@@ -403,6 +403,9 @@ A small project: a code library that understands date phrases written in Italian
 ## 14.2 What a first draft looks like, and how to review it
 The `examples/book-club/` folder of the NodFirst repository shows the files an agent wrote for an imaginary book club (profile, roadmap, first spec) **exactly as drafted**, with a review that points out what a careful reader should catch before approving: a criterion with no action, an edge case decided by the agent instead of asked, an assumption hidden in a sentence, a rule that only exists in an edge case. It is illustrative, not a real project. Read the draft first, try to find the problems yourself, then read the review.
 
+## 14.3 A whole feature, from start to finish
+The `examples/shortz/` folder of the NodFirst repository has every document of one real feature: a small web app that shortens links, built in one day by an agent and deployed. You can follow it from the profile to the last verification: the check that added two missing criteria before any code, a security problem found by the independent check and fixed through the normal path, and how the owner closed the feature knowingly with fourteen problems accepted.
+
 ---
 
 # Appendix A — Glossary (plain words)
@@ -518,13 +521,15 @@ docs/decisions/          decision records
 
 | Part | State |
 |---|---|
-| `init` interview and profile, `specify` (Modes A and B), `plan`, `tasks`, `analyze`, `implement` | proven on two projects (before the first release) |
-| Working profiles, Git checkpoints, command files, `init update` | new in 0.1, not yet used |
-| `adopt`, `next`, `verify`, `fix` | new in 0.1, not yet used |
-| `specify` Mode C, `clarify`, `design`, `design-system` | written, not yet used |
-| Module `library` | proven |
-| Module `web` | partly proven |
-| Modules `backend`, `mobile`, `desktop` | written from standard practice, not yet used |
+| `init` interview and profile, `specify` (Modes A and B), `plan`, `tasks`, `analyze`, `implement` | proven on two projects before the first release, used on a third after it |
+| Working profile Solo, Git checkpoints, command files for Cursor, `design`, `verify` | used on one real project |
+| Working profiles Guided and Team, command files for other tools, `init update` | new in 0.1, not yet used |
+| `adopt`, `next`, `fix`; closing a feature after `verify` | new, not yet used |
+| `specify` Mode C, `clarify`, `design-system` | written, not yet used |
+| Module `library` | proven (on a sandbox project) |
+| Module `web` | partly proven, on two projects |
+| Module `backend` | used once, not yet reviewed line by line |
+| Modules `mobile`, `desktop` | written from standard practice, not yet used |
 | AI-feature module | not written |
 
 Every "not yet used" part improves with its first real use: note what you find in `project/lessons.md`.

@@ -1,10 +1,10 @@
 # Module: Web application
 
-> **PARTLY PROVEN.** Used on one real project for specify, plan, tasks, analyze and the first implement tasks. Rules W7–W11 and the items under "Not yet proven" have never been used: `init` says so and asks for confirmation.
+> **PARTLY PROVEN.** Used on two real projects: the first up to its first implement tasks, the second (Shortz, 2026-11-26) from `init` to `verify` and deployment. The items under "Not yet proven" have never been used: `init` says so and asks for confirmation.
 
 **Version:** 0.1
 **Scope:** projects with a browser UI: websites, web apps, installable web apps (PWA), with or without a server side (sign-in, stored data, hosting). Framework-neutral: server-rendered, single-page or mixed.
-**State:** partly proven on one real project (see the end). Rules not tied to that project are written from standard practice and marked *not yet proven* in the final section.
+**State:** partly proven on two real projects (see the end). Rules not tied to them are written from standard practice and marked *not yet proven* in the final section.
 
 ## Rules (in addition to the constitution)
 
@@ -45,5 +45,6 @@
 Rendering model, database and hosting, ORM, authentication, UI component library, rich-text editor and storage format, offline and synchronization strategy, PWA tooling, date model, test tooling and browsers, quality and performance targets, deletion and retention, analytics, email provider, CI, error monitoring.
 
 ## Proven and not yet proven
-- **Proven (one project, partly):** spec with security and privacy section, plan with the handoff list and the security checklist (five review rounds), tasks with dependencies and human-action marking, analysis, and the first implement tasks (scaffolding, text catalogue, test runner).
-- **Not yet proven:** end-to-end tests and the multi-browser rule (W7), automated accessibility checks, tasks that need human action in consoles (accounts, buckets, secrets), database-backed tests, offline and installable behaviour, the design phase and the design system, W8–W11 (written from standard practice).
+- **Proven (first project, partly):** spec with security and privacy section, plan with the handoff list and the security checklist (five review rounds), tasks with dependencies and human-action marking, analysis, and the first implement tasks (scaffolding, text catalogue, test runner).
+- **Proven (Shortz, one feature end to end):** end-to-end tests of the critical flows, automated accessibility checks, tasks that need human action in consoles (database account, hosting, secrets), database-backed tests, the design phase, performance targets (W8), security headers and pinned, audited dependencies (W9), error pages (W10), forms (W11). `verify` found real gaps against W3 (reduced motion), W4 (time zone) and W9 (a loose content-security policy): the rules caught them; see `examples/shortz/` in the NodFirst repository.
+- **Not yet proven:** W7 with more than one browser engine in the gate (Shortz recorded the Firefox and WebKit gap), a keyboard and screen-reader pass done by a person, offline and installable behaviour (W6), the design system (`design-system` playbook), right-to-left and translated layouts (W4).

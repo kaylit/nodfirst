@@ -1,6 +1,6 @@
 # Playbook: Analyze
 
-**Version:** 0.1 (tested on three feature runs)
+**Version:** 0.1 (tested on six runs, three projects)
 **Purpose:** a read-only consistency check across constitution, spec, design (if any), plan and tasks, before implementation starts. It can be run again after any revision.
 **Prompt:** `/nodfirst-analyze` (or mention `nodfirst/playbooks/analyze.md`) (add a feature number only if it is not the active one).
 **Output:** `specs/NNN-feature-name/analysis.md` (the only file you may create or overwrite). Nothing else changes.

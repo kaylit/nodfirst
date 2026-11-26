@@ -1,10 +1,10 @@
 # Module: Backend service
 
-> **⚠ NOT YET PROVEN.** This module has never been used on a real project. Its rules come from standard practice. `init` asks the human to confirm before using it, and the first project that uses it must review every rule and record corrections in `project/lessons.md`.
+> **⚠ NOT YET PROVEN.** This module has been used once on a real project, but its rules have not yet been reviewed line by line. They come from standard practice. `init` asks the human to confirm before using it, and the next project that uses it must review every rule and record corrections in `project/lessons.md`.
 
 **Version:** 0.1
 **Scope:** server-side software without its own UI: HTTP APIs (REST/JSON or similar), background jobs and workers, event-driven and messaging services. Language- and framework-neutral. If the project also has a browser UI, activate `web` too; if it serves a mobile or desktop client, activate that module too.
-**State:** **not yet proven** on any project. Written from standard practice; the first real project must review it and record what it changes.
+**State:** **not yet proven**. Used once on a real project (Shortz: HTTP operations and a database in the same app as a web UI, serverless hosting) without the line-by-line review; see the end.
 
 ## Rules (in addition to the constitution)
 
@@ -46,5 +46,5 @@
 Language and framework, API style, data store and hosting, authentication method and identity provider, queue or broker, deployment model and environments, observability stack, versioning scheme, rate-limit design, retention and deletion, backup schedule, CI, secrets storage, cost limits.
 
 ## Proven and not yet proven
-- **Proven:** nothing yet. The generic parts (spec, plan, tasks, analyze, implement) are proven on the web and library modules.
-- **Not yet proven:** all rules above, especially B7 (migrations), B9 (restore), B14 and B15 (jobs and events), and the integration-test gate against real infrastructure.
+- **Used once, not yet reviewed (Shortz):** the OWASP API Security baseline, rate limits with their counters in the database, migrations applied on an empty database (B7), integration tests against the real database service. `verify` reported B5 (a list without page size) and a non-atomic rate-limit counter; see `examples/shortz/` in the NodFirst repository.
+- **Not yet proven:** every rule until the line-by-line review is done; in particular B9 (restore), B14 and B15 (jobs and events), and a standalone service with its own API clients.

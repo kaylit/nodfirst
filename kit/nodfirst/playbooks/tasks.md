@@ -1,6 +1,6 @@
 # Playbook: Tasks
 
-**Version:** 0.1 (tested on two projects)
+**Version:** 0.1 (tested on three projects, including a revision after verification)
 **Purpose:** break an approved plan into small, ordered, verifiable tasks.
 **Prompt:** `/nodfirst-tasks` (or mention `nodfirst/playbooks/tasks.md`) (and a feature number only if it is not the active one).
 **Output:** `specs/NNN-feature-name/tasks.md`, status `Draft`.

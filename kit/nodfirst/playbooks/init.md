@@ -1,6 +1,6 @@
 # Playbook: Init (new project)
 
-**Version:** 0.1 (interview and profile tested on two projects; working profiles, Git checkpoints, command install and "after a kit update" not yet proven)
+**Version:** 0.1 (interview and profile tested on three projects; Solo profile, Git checkpoints and command install for Cursor used on one; Guided and Team profiles, other tools and "after a kit update" not yet proven)
 **Purpose:** set up NodFirst in a project: write the project profile, choose how the human wants to work, install the commands for the human's coding tool, and create the supporting files. For a project that already has code, use `adopt` instead.
 **Prompt:** `/nodfirst-init` (or mention `nodfirst/playbooks/init.md`) followed by a few lines about the project. After a kit update: `/nodfirst-init update`.
 **Output:** `project/profile.md` filled in, `project/roadmap.md`, `project/lessons.md`, folders `specs/` and `docs/decisions/`, and the command files for the human's tool.

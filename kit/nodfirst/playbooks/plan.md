@@ -1,6 +1,6 @@
 # Playbook: Plan
 
-**Version:** 0.1 (tested on two projects)
+**Version:** 0.1 (tested on three projects, including a change request after verification)
 **Purpose:** turn an approved spec into `plan.md`: how the feature will be built, with every technical decision recorded.
 **Prompt:** `/nodfirst-plan` (or mention `nodfirst/playbooks/plan.md`) (and a feature number only if it is not the active one). Extra instructions go below.
 **Output:** `specs/NNN-feature-name/plan.md`, status `Draft`.

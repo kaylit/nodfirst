@@ -2,7 +2,7 @@
 
 **Version:** 0.1
 **Scope:** a library, SDK or package with a public API used by other code (no UI, no hosting of its own). Language-neutral. Written from a text-parsing library; rules marked *text* apply when the API accepts text.
-**State:** proven on one sandbox project (two features, fifteen tasks, 160 tests). Rules L7–L11 are written from standard practice and are *not yet proven*.
+**State:** proven on one sandbox project built to test the kit (two features, fifteen tasks, 160 tests). Rules L7–L11 are written from standard practice and are *not yet proven*.
 
 ## Rules (in addition to the constitution)
 

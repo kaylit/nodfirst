@@ -45,8 +45,9 @@ It is plain Markdown: no program to install, no account, works with Claude Code,
    For a project that already has code, use `nodfirst/playbooks/adopt.md` instead.
 3. Answer the questions (or say "your suggestion"). At the end the agent installs the commands for your tool, and from then on:
    ```
-   /nodfirst-specify   /nodfirst-plan   /nodfirst-tasks   /nodfirst-analyze
-   /nodfirst-implement /nodfirst-verify /nodfirst-fix     /nodfirst-next
+   /nodfirst-specify   /nodfirst-clarify  /nodfirst-design   /nodfirst-plan
+   /nodfirst-tasks     /nodfirst-analyze  /nodfirst-implement /nodfirst-verify
+   /nodfirst-fix       /nodfirst-next     /nodfirst-design-system
    ```
    (in Codex: `$nodfirst-…`).
 
@@ -89,15 +90,17 @@ If you are a developer who wants the widest integration and a large community, S
 
 ## Status
 
-Version **0.1.0**, an early release. Its core was run on two real projects before release. What has been used for real, and what has not:
+Version **0.1.0**, an early release. Its core was run on two projects before release (a web project and a sandbox library), and on a first real project after it, built and deployed from `init` to `verify` ([Shortz](examples/shortz/)). What has been used for real, and what has not (including changes not yet released):
 
 | Part | State |
 |---|---|
-| `init` (interview and profile), `specify` (new and revise), `plan`, `tasks`, `analyze`, `implement` | used on two projects |
-| Module `library` | proven · module `web`: partly proven |
-| Working profiles, Git checkpoints, command files, `adopt`, `next`, `verify`, `fix` | new, not yet used |
-| `specify` from your material, `clarify`, `design`, `design-system` | written, not yet used |
-| Modules `backend`, `mobile`, `desktop` | written from standard practice, not yet used |
+| `init` (interview and profile), `specify` (new and revise), `plan`, `tasks`, `analyze`, `implement` | used on three projects |
+| Working profile Solo, Git checkpoints, command files for Cursor, `design`, `verify` | used on one project (Shortz) |
+| Working profiles Guided and Team, command files for other tools, `init update`, `adopt`, `next`, `fix`; closing a feature and the new `verify` verdict rules (unreleased) | new, not yet used |
+| `specify` from your material, `clarify`, `design-system` | written, not yet used |
+| Module `library` | proven (sandbox) · module `web`: partly proven, on two projects |
+| Module `backend` | used once (Shortz), line-by-line review still to do |
+| Modules `mobile`, `desktop` | written from standard practice, not yet used |
 
 Next steps are in [`ROADMAP.md`](ROADMAP.md); changes in [`CHANGELOG.md`](CHANGELOG.md).
 
