@@ -17,7 +17,7 @@ COMMANDS = {
     "tasks":         ("Break the approved plan into small, ordered, verifiable tasks.", "optional feature number"),
     "analyze":       ("Read-only consistency check of spec, plan and tasks.", "optional feature number"),
     "implement":     ("Carry out the next task (or a named one): tests first, then code.", "optional task, e.g. T5"),
-    "verify":        ("Independent check of the finished code against the spec. Run in a new chat.", "optional feature number"),
+    "verify":        ("Independent check of the finished code against the spec (new chat); or close the feature.", "optional feature number, or 'close' and the findings you accept"),
     "fix":           ("Light track: a bug fix or a small change to one behaviour.", "what is wrong or what should change"),
     "next":          ("Where are we and what is the next step? Changes nothing.", ""),
 }

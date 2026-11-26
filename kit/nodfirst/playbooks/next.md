@@ -1,6 +1,6 @@
 # Playbook: Next (where are we, what now?)
 
-**Version:** 0.1 (not yet proven)
+**Version:** 0.2 (not yet proven)
 **Purpose:** read the project files and tell the human, in a few lines, where the project stands and what to do next. Safe to run at any time.
 **Prompt:** `/nodfirst-next` (or mention `nodfirst/playbooks/next.md`), or simply ask "where are we?".
 **Output:** a short answer in the chat. **No file changes.**
@@ -26,8 +26,10 @@ Follow the working profile's language (constitution, Section 2). Read only; chan
    - no analysis, or an analysis older than the latest change to spec, plan or tasks → `analyze`;
    - analysis with Critical or High findings not accepted → fix them (`specify` Mode B, `plan` or `tasks` revision), then `analyze` again;
    - tasks not all `[x]` → `implement` (name the next task, and any task marked `[!]` with its blocker or "Requires human action");
-   - all tasks done, no verification or one with Critical or High findings → `verify` in a new chat;
-   - verified → the feature is finished: suggest the next roadmap item.
+   - all tasks done, no verification → `verify` in a new chat;
+   - verification with Critical or High findings and no **Closure** section → the human decides: fix them (`tasks` revision, then `verify` again in a new chat) or close the feature accepting them (`/nodfirst-verify close` with the findings accepted and their reasons);
+   - verification with no Critical or High finding and no **Closure** section → the human closes the feature (`/nodfirst-verify close`);
+   - **Closure** recorded → the feature is finished: suggest the next roadmap item, and mention the follow-ups of accepted findings.
 4. **Look for warnings:** a file changed after its approval stamp (changes to Section 0 of the profile do not count); a task in progress `[~]` with no report; a change request that nobody has answered; a "Requires human action" item ahead; Commands still TBD after the scaffolding task.
 5. **Answer** in at most ten lines:
    - **Where we are:** one sentence.

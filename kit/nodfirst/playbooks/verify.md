@@ -1,9 +1,9 @@
 # Playbook: Verify
 
-**Version:** 0.1 (not yet proven)
+**Version:** 0.2 (used on one project, three runs; closing step new in 0.2, not yet proven)
 **Purpose:** an independent check that the finished code does what the approved spec says, nothing more and nothing less, and respects the plan and the constitution (C14). It complements `analyze`, which checks the documents before the code exists.
-**Prompt:** `/nodfirst-verify` (or mention `nodfirst/playbooks/verify.md`), **in a new chat**, ideally with another model or another agent than the one that implemented the feature.
-**Output:** `specs/NNN-feature-name/verification.md` (the only file you may create or overwrite). Nothing else changes.
+**Prompt:** `/nodfirst-verify` (or mention `nodfirst/playbooks/verify.md`), **in a new chat**, ideally with another model or another agent than the one that implemented the feature. To close the feature afterwards: `/nodfirst-verify close` followed by the findings you accept, each with a reason (any chat).
+**Output:** `specs/NNN-feature-name/verification.md` (the only file you may create or overwrite). Nothing else changes, except the lines named in "Closing the feature" when the human closes it.
 
 ## Context to read (do not ask the human to attach it)
 `AGENTS.md`, `nodfirst/constitution.md`, `project/profile.md`, the modules it lists (`nodfirst/modules/`), and for the active feature `spec.md`, `design.md` if any, `plan.md`, `tasks.md`, `analysis.md`; then the code and tests the tasks name, and the rest of the code base as needed.
@@ -16,6 +16,7 @@
 
 You are an inspector, not a builder. Follow `nodfirst/constitution.md`, especially C1, C3, C4, C5, C6 and C14. Do not trust the implement reports: check the code and run the commands yourself.
 
+0. **Closing.** If the human asks to close the feature (`close` …), skip the checks and go to "Closing the feature" below.
 1. **Run the single quality command** (profile, Section 5) from a fresh environment if the profile allows it, otherwise as is. Record the command, the result and the number of tests. If it cannot run (a missing tool, a secret, a device), say so: that is a finding, not a pass.
 2. **Requirement by requirement.** For every active requirement and acceptance criterion of the spec, find the code that implements it and the test that proves it. Classify each:
    - **met:** implemented, and a test fails if the behaviour is removed (read the test; a test that cannot fail does not count);
@@ -34,8 +35,19 @@ You are an inspector, not a builder. Follow `nodfirst/constitution.md`, especial
    - Table: requirement / criterion → status → code → test.
    - Findings: ID, severity, kind, where, what is wrong, the smallest fix and where it belongs (a new task, a spec change request, a plan revision).
    - **Needs a human:** checks only a person can do (real device, store console, manual screen-reader pass), each as one line the human can follow.
-9. **Stop.** Show the summary and the verdict. In the Guided profile, explain the verdict in everyday words. Do not fix anything: fixes become tasks appended to `tasks.md` by the `tasks` playbook (revision), or change requests, and then `verify` runs again.
+9. **Stop.** Show the summary and the verdict. In the Guided profile, explain the verdict in everyday words. Do not fix anything: fixes become tasks appended to `tasks.md` by the `tasks` playbook (revision), or change requests, and then `verify` runs again; or the human closes the feature with the findings accepted (below).
+
+## Closing the feature (only when the human decides)
+After the verification, the human decides; you never do (C2). Either **fix** (the findings become tasks or change requests, then `verify` runs again) or **close**. Even a `verified` feature is finished only when the human closes it. The human closes with `/nodfirst-verify close …` or in words (for example "close feature 001, accept F3 and F7"). Closing does not need a new chat: it records a decision and checks nothing. Then:
+1. **Every Critical or High finding left is named by the human as accepted,** each with a reason and a follow-up (a roadmap item, a later feature, or "none"). Ask for whatever is missing. A finding the human does not name stays open, and the feature is not closed. Before recording an accepted Critical or security finding, say in one sentence what it means for the people who use the product (Guided profile: in everyday words).
+2. **Record the decision,** changing nothing else:
+   - `verification.md`: a final section **Closure** with closed by, date (as the human gives them), the verdict at closure (unchanged), and a table finding → reason → follow-up (for a feature with no finding left: "No findings left");
+   - `project/profile.md`, Section 0: `Active feature: none`;
+   - `project/roadmap.md`: at the end of the feature's line, `– closed <date> (verified)` or `– closed <date> (findings accepted: F…)`; each follow-up the human wants on the roadmap, as a new feature line.
+3. **Git checkpoints:** commit those files with the message `feature NNN closed`.
+
+The verdict is never changed to make a closure possible: a feature closed with accepted findings stays `partly verified` or `not verified`, and says so.
 
 ## Do not
-- Edit any file other than `verification.md`, fix code, mark tasks, or approve anything.
+- Edit any file other than `verification.md` (and, at closure, the lines named above), fix code, mark tasks, or approve or close anything on your own.
 - Count a check that did not run as passed.

@@ -281,7 +281,8 @@ If you wrote the spec in your own format, clarify first asks you to run `specify
 ## 7.8 Verify — the independent check *(not yet proven)*
 **What you type,** in a **new chat**, ideally with a different model or tool: `/nodfirst-verify`
 **Why.** The agent that wrote the code should not be the only one to say it is right. Verify reads only the files and the code, runs the checks itself, and answers for each requirement: *met*, *partial*, *missing*, *contradicts* or *untested*. It also looks for things **nobody asked for**, does a security and privacy review, and lists the checks only a person can do (for example "open the app on your phone and try to sign in with a wrong password").
-**What you get.** `verification.md` with a verdict: *verified*, *partly verified* or *not verified*. Problems become new tasks or spec changes, and verify runs again. The feature is finished when it is *verified*.
+**What you get.** `verification.md` with a verdict: *verified*, *partly verified* or *not verified*.
+**What you do.** You decide. Either the problems become new tasks or spec changes and verify runs again, or you **close** the feature knowingly: you name each problem you accept, why, and what will be done about it later (`/nodfirst-verify close accept F3: the time is shown in UTC, fix it in the next feature`). The agent writes your decision in the file and never changes the verdict to fit it. The feature is finished when you close it, even when it is *verified*.
 
 ---
 
@@ -443,7 +444,7 @@ The `examples/book-club/` folder of the NodFirst repository shows the files an a
 **Before approving a plan:** every decision explained and recorded · covers every requirement, nothing extra · data and privacy clear · costs and commitments known · testing described · versions fixed.
 **Before approving tasks:** small · every criterion tested · your own actions marked · final verification last.
 **Before accepting a task:** "Before" present · checks and results shown · deviations explained · nothing unrequested added · interpretations agreed.
-**Before calling a feature finished:** `verify` run in a new chat · verdict *verified* · the "needs a human" checks done by you.
+**Before closing a feature:** `verify` run in a new chat · verdict *verified*, or every problem left accepted by you with a reason and a follow-up · the "needs a human" checks done by you, or accepted the same way.
 
 ---
 
@@ -467,6 +468,7 @@ After `init` or `adopt` your tool knows these commands. Add your words after the
 /nodfirst-analyze                                    check the documents agree
 /nodfirst-implement                                  next task (or: /nodfirst-implement T5)
 /nodfirst-verify                                     independent check (new chat)
+/nodfirst-verify close accept F3: <reason>           close the feature, accepting what is left
 /nodfirst-fix <what is wrong>                        small fix (light track)
 ```
 

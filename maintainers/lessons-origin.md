@@ -1,6 +1,6 @@
 # Lessons from the origin projects
 
-> Historical log from the two proving grounds run before the first release. "Applied in 0.1" means the rule is part of NodFirst 0.1.0. File names follow the layout of that time (`sdd/` for today's `nodfirst/` and `project/`; "Level 2" for today's project profile).
+> Log of the lessons that shaped the rules: first the two proving grounds run before the first release, then real projects after it (newest at the end). "Applied in 0.1" means the rule is part of NodFirst 0.1.0; "applied in [Unreleased]" means it is on its way to the next version. File names follow the layout of that time (`sdd/` for today's `nodfirst/` and `project/`; "Level 2" for today's project profile).
 
 Where an agent misunderstood, improvised, or skipped a gate; which template section was missing or useless; which rule was too vague.
 Review after each feature and amend templates, playbooks, or the constitution.
@@ -147,3 +147,8 @@ Format: **Date · Feature · What happened · Cause · Change made (file)**
 - **What happened:** a one-line prompt with "Context to read" let Cursor find constitution, spec, plan and tasks on its own. A clarifying question on singular vs plural before writing the spec helped. The implement report format was followed (Before, tests, files, gates, deviations).
 - **Cause:** short prompts plus explicit "Context to read" and the report template reduce missed context and incomplete reports.
 - **Change:** none — keep these practices. **To apply:** retain one-line prompts that name the playbook; keep the clarifying question on agreement before specify; keep the implement report form.
+
+## 2026-11-26 · Shortz, feature 001 (first real project on 0.1.0) · No way to close a feature with accepted findings
+- **What happened:** `verify` run 3 gave `not verified` with 14 findings. The human chose to ship and close the feature, accepting all of them. The kit had no such outcome: the agent invented a `Last closed` line in the profile and a "Closed" mark in the roadmap, and `next` would still have answered "run `verify`". See `examples/shortz/`.
+- **Cause:** `verify`, `next`, `implement` and the manual knew only two outcomes: `verified` (finished) or fix and verify again. Closing knowingly is a human decision the kit did not name.
+- **Change:** **applied in [Unreleased]**: `verify` has a "Closing the feature" step (the human names every Critical or High finding left, with a reason and a follow-up; the agent records a Closure section, profile Section 0 and the roadmap line; the verdict never changes); `next` and `implement` treat a recorded Closure as finished; manual 7.8 and Appendix B explain it.

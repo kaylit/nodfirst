@@ -1,6 +1,6 @@
 # Playbook: Implement
 
-**Version:** 0.1 (tested on two features, fifteen tasks)
+**Version:** 0.2 (tested on three features, forty-seven tasks)
 **Purpose:** carry out one task of an approved task list: tests first, minimal code, quality gates, honest report.
 **Prompt:** `/nodfirst-implement` (or mention `nodfirst/playbooks/implement.md`) (next task) or add `T5` (a named task).
 **Output:** the code and tests of the task, and `tasks.md` updated.
@@ -38,7 +38,7 @@ The report of the last task is **incomplete** without all four items:
 3. A search for `TBD` in the docs and `project/profile.md`, with the result.
 4. A list of files that do not belong to the project (leftovers, notes of other projects, editor files).
 
-Then suggest the next step: run `/nodfirst-verify` **in a new chat**, ideally with another model or agent (C14). The feature is not finished until the verification has no Critical or High finding left.
+Then suggest the next step: run `/nodfirst-verify` **in a new chat**, ideally with another model or agent (C14). The feature is finished only when the human closes it after the verification (`verify`, "Closing the feature").
 
 ## Safety
 - Never run destructive commands (data deletion, force push, dropping tables, mass file removal) without explicit approval.

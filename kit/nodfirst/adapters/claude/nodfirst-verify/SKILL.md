@@ -1,7 +1,7 @@
 ---
 name: nodfirst-verify
-description: NodFirst – Independent check of the finished code against the spec. Run in a new chat.
-argument-hint: optional feature number
+description: NodFirst – Independent check of the finished code against the spec (new chat); or close the feature.
+argument-hint: optional feature number, or 'close' and the findings you accept
 disable-model-invocation: true
 ---
 

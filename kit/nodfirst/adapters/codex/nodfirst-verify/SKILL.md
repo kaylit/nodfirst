@@ -1,6 +1,6 @@
 ---
 name: nodfirst-verify
-description: NodFirst – Independent check of the finished code against the spec. Run in a new chat. Use only when the user explicitly invokes nodfirst-verify.
+description: NodFirst – Independent check of the finished code against the spec (new chat); or close the feature. Use only when the user explicitly invokes nodfirst-verify.
 ---
 
 Follow `nodfirst/playbooks/verify.md` exactly, from its "Context to read" to its "Stop".

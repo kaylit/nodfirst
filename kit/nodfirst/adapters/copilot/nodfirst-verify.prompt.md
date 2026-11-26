@@ -1,5 +1,5 @@
 ---
-description: NodFirst – Independent check of the finished code against the spec. Run in a new chat.
+description: NodFirst – Independent check of the finished code against the spec (new chat); or close the feature.
 agent: agent
 ---
 

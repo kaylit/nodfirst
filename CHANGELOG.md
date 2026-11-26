@@ -7,6 +7,9 @@ Categories: **Added**, **Changed**, **Fixed**, **Removed**. Each entry names the
 ## [Unreleased]
 <!-- Add entries here as you work; move them under a version when you tag it. -->
 
+### The kit (`kit/`)
+- **Added** closing a feature: after `verify`, the human either fixes or closes the feature; a closure names every Critical or High finding left with a reason and a follow-up, and the verdict is never changed to fit it. The agent records a **Closure** section in `verification.md`, `Active feature: none` in the profile and the closing line in `project/roadmap.md`. Files: `nodfirst/playbooks/verify.md` (0.2), `nodfirst/playbooks/next.md` (0.2), `nodfirst/playbooks/implement.md` (0.2), `nodfirst/manual.md` (7.8, Appendices B and C), `nodfirst/adapters/*/nodfirst-verify*` (description and hint: `/nodfirst-verify close`). Lesson: Shortz, `maintainers/lessons-origin.md`. Replacing `nodfirst/` is enough; no profile change.
+
 ### The repository
 - **Added** `examples/shortz/`: the documents of the first real project run with NodFirst 0.1.0 (a URL shortener, one feature from `init` to `verify`, three verification runs by another model, deployed), with a README on how it went and what it taught the kit. Hosts and account names replaced. No kit file changed.
 - **Changed** `examples/README.md` (the new example) and `maintainers/tools/build_site.py` (site pages for it).
