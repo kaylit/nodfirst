@@ -1,0 +1,31 @@
+// Small adjustments for NodFirst.
+
+// Wide screens: the theme centres sidebar and text as one block, leaving an empty band on the left.
+// Keep the sidebar against the left edge and the text right next to it.
+@include mq(lg) {
+  .side-bar {
+    width: $nav-width;
+    min-width: $nav-width;
+    align-items: stretch;
+  }
+  // The theme positions the text with `.side-bar + .main`, so the override needs the same selector.
+  .side-bar + .main {
+    margin-left: $nav-width;
+    max-width: 64rem;
+  }
+}
+
+// Code blocks (commands to copy) scroll inside their box instead of widening the page on phones.
+.main-content pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+// Images (the logo on the home page) never overflow small screens.
+.main-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-logo { background-size: contain; }
+.main-content h1:first-of-type { margin-top: 0; }
