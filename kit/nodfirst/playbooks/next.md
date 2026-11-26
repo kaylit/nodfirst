@@ -28,7 +28,7 @@ Follow the working profile's language (constitution, Section 2). Read only; chan
    - tasks not all `[x]` → `implement` (name the next task, and any task marked `[!]` with its blocker or "Requires human action");
    - all tasks done, no verification → `verify` in a new chat;
    - verification with Critical or High findings and no **Closure** section → the human decides: fix them (`tasks` revision, then `verify` again in a new chat) or close the feature accepting them (`/nodfirst-verify close` with the findings accepted and their reasons);
-   - verification with no Critical or High finding and no **Closure** section → the human closes the feature (`/nodfirst-verify close`);
+   - verification with no Critical or High finding and no **Closure** section → the human does the open "Needs a human" checks (name them), then closes the feature (`/nodfirst-verify close`);
    - **Closure** recorded → the feature is finished: suggest the next roadmap item, and mention the follow-ups of accepted findings.
 4. **Look for warnings:** a file changed after its approval stamp (changes to Section 0 of the profile do not count); a task in progress `[~]` with no report; a change request that nobody has answered; a "Requires human action" item ahead; Commands still TBD after the scaffolding task.
 5. **Answer** in at most ten lines:

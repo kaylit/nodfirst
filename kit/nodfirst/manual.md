@@ -281,7 +281,10 @@ If you wrote the spec in your own format, clarify first asks you to run `specify
 ## 7.8 Verify — the independent check *(not yet proven)*
 **What you type,** in a **new chat**, ideally with a different model or tool: `/nodfirst-verify`
 **Why.** The agent that wrote the code should not be the only one to say it is right. Verify reads only the files and the code, runs the checks itself, and answers for each requirement: *met*, *partial*, *missing*, *contradicts* or *untested*. It also looks for things **nobody asked for**, does a security and privacy review, and lists the checks only a person can do (for example "open the app on your phone and try to sign in with a wrong password").
-**What you get.** `verification.md` with a verdict: *verified*, *partly verified* or *not verified*.
+**What you get.** `verification.md` with a verdict:
+- *not verified*: at least one serious problem in the code (Critical or High);
+- *partly verified*: no serious problem found, but some checks only you can do are still open (they are in the list "Needs a human": tell the agent the result of each);
+- *verified*: no serious problem, and nothing left for you to check.
 **What you do.** You decide. Either the problems become new tasks or spec changes and verify runs again, or you **close** the feature knowingly: you name each problem you accept, why, and what will be done about it later (`/nodfirst-verify close accept F3: the time is shown in UTC, fix it in the next feature`). The agent writes your decision in the file and never changes the verdict to fit it. The feature is finished when you close it, even when it is *verified*.
 
 ---

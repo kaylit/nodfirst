@@ -152,3 +152,13 @@ Format: **Date · Feature · What happened · Cause · Change made (file)**
 - **What happened:** `verify` run 3 gave `not verified` with 14 findings. The human chose to ship and close the feature, accepting all of them. The kit had no such outcome: the agent invented a `Last closed` line in the profile and a "Closed" mark in the roadmap, and `next` would still have answered "run `verify`". See `examples/shortz/`.
 - **Cause:** `verify`, `next`, `implement` and the manual knew only two outcomes: `verified` (finished) or fix and verify again. Closing knowingly is a human decision the kit did not name.
 - **Change:** **applied in [Unreleased]**: `verify` has a "Closing the feature" step (the human names every Critical or High finding left, with a reason and a follow-up; the agent records a Closure section, profile Section 0 and the roadmap line; the verdict never changes); `next` and `implement` treat a recorded Closure as finished; manual 7.8 and Appendix B explain it.
+
+## 2026-11-26 · Shortz, feature 001 · Checks only a person can do blocked the verdict
+- **What happened:** "no GitHub Actions run observed" and "production smoke not repeated by this run" were written as High findings (F9, F10). With them, `verified` and even `partly verified` were out of reach whatever the code did, although the same report had a "Needs a human" list for such checks.
+- **Cause:** `verify` said both "a check that cannot run is a finding" and "`partly verified`: some checks could not run", and "untested" (High) did not say whether it meant the code or the environment.
+- **Change:** **applied in [Unreleased]**: a check that could not be done from here goes to Needs a human (checkbox, result recorded when the human reports it), never as a finding or a pass; "untested" means no test in the code; the three verdicts have exact rules; closing also needs every open human check done or accepted.
+
+## 2026-11-26 · Shortz, feature 001 · The verdict changed between runs
+- **What happened:** run 2 said `partly verified` (10 findings); run 3, on almost the same code, said `not verified` (14 findings, 2 Critical), partly by reading the severity scale more literally.
+- **Cause:** no rule on how a re-run treats the previous findings, and an ambiguous verdict rule (above).
+- **Change:** **applied in [Unreleased]**: a re-run lists every previous finding as closed, still open or reclassified, with a reason for any change of severity, and must not reclassify only to change the verdict. Watch on the next real project whether this is enough.
