@@ -7,6 +7,10 @@ Categories: **Added**, **Changed**, **Fixed**, **Removed**. Each entry names the
 ## [Unreleased]
 <!-- Add entries here as you work; move them under a version when you tag it. -->
 
+### The repository
+- **Added** `examples/shortz/`: the documents of the first real project run with NodFirst 0.1.0 (a URL shortener, one feature from `init` to `verify`, three verification runs by another model, deployed), with a README on how it went and what it taught the kit. Hosts and account names replaced. No kit file changed.
+- **Changed** `examples/README.md` (the new example) and `maintainers/tools/build_site.py` (site pages for it).
+
 ## [0.1.0] — 2026-11-26 — first release (pre-release)
 
 ### The kit (`kit/`)

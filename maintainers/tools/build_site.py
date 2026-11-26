@@ -154,6 +154,18 @@ def plan_urls():
         "kit/project/profile.md": "/reference/templates/profile/",
         "examples": "/examples/",
         "examples/README.md": "/examples/",
+        "examples/shortz": "/examples/shortz/",
+        "examples/shortz/README.md": "/examples/shortz/",
+        "examples/shortz/project/profile.md": "/examples/shortz/profile/",
+        "examples/shortz/project/roadmap.md": "/examples/shortz/roadmap/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/spec.md": "/examples/shortz/spec/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/design.md": "/examples/shortz/design/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/plan.md": "/examples/shortz/plan/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/tasks.md": "/examples/shortz/tasks/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/analysis.md": "/examples/shortz/analysis/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/verification.md": "/examples/shortz/verification/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/verification-prep.md": "/examples/shortz/verification-prep/",
+        "examples/shortz/specs/001-shorten-redirect-manage-by-token/keyboard-check.md": "/examples/shortz/keyboard-check/",
         "examples/book-club": "/examples/book-club/",
         "examples/book-club/README.md": "/examples/book-club/",
         "examples/book-club/review.md": "/examples/book-club/review/",
@@ -271,8 +283,24 @@ def reference():
 def examples():
     write_page("/examples/", rewrite_links(read("examples/README.md"), "examples/README.md"),
                title="Examples", nav_order=4, has_children=True)
+    write_page("/examples/shortz/", rewrite_links(read("examples/shortz/README.md"), "examples/shortz/README.md"),
+               title="Shortz (real run)", parent="Examples", nav_order=1, has_children=True)
+    shortz = [
+        ("examples/shortz/project/profile.md", "/examples/shortz/profile/", "Profile"),
+        ("examples/shortz/project/roadmap.md", "/examples/shortz/roadmap/", "Roadmap"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/spec.md", "/examples/shortz/spec/", "Spec 001"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/design.md", "/examples/shortz/design/", "Design 001"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/plan.md", "/examples/shortz/plan/", "Plan 001"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/tasks.md", "/examples/shortz/tasks/", "Tasks 001"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/analysis.md", "/examples/shortz/analysis/", "Analysis 001"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/verification.md", "/examples/shortz/verification/", "Verification 001"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/verification-prep.md", "/examples/shortz/verification-prep/", "Production smoke note"),
+        ("examples/shortz/specs/001-shorten-redirect-manage-by-token/keyboard-check.md", "/examples/shortz/keyboard-check/", "Keyboard check note"),
+    ]
+    for i, (src, url, title) in enumerate(shortz, 1):
+        write_page(url, rewrite_links(read(src), src), title=title, parent="Shortz (real run)", grand_parent="Examples", nav_order=i)
     write_page("/examples/book-club/", rewrite_links(read("examples/book-club/README.md"), "examples/book-club/README.md"),
-               title="Book club", parent="Examples", nav_order=1, has_children=True)
+               title="Book club", parent="Examples", nav_order=2, has_children=True)
     items = [
         ("examples/book-club/project/profile.md", "/examples/book-club/profile/", "Profile (draft)"),
         ("examples/book-club/project/roadmap.md", "/examples/book-club/roadmap/", "Roadmap (draft)"),

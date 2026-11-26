@@ -2,6 +2,7 @@
 
 | Example | What it shows | Real or illustrative |
 |---|---|---|
+| [`shortz/`](shortz/) | A whole feature of a deployed web app, from `init` to `verify` (three runs, another model), with the findings the human accepted and what the run taught the kit | **Real** |
 | [`book-club/`](book-club/) | The files an agent drafts in a Guided project (profile, roadmap, first spec), and the review a careful reader does before approving | **Illustrative** |
 
 A worked summary of a real run (a library that reads date phrases written in Italian) is in the manual, Part 14.
